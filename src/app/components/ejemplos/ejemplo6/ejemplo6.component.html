@@ -1,0 +1,33 @@
+<p>ejemplo6</p>
+<div>
+  <a
+  pButton
+  pRipple
+  label="Crear Usuario"
+  icon="pi pi-user-plus"
+  class="bg-cyan-600"
+  [routerLink]="['/agregarProducto']">
+  </a>
+</div>
+<p-table [value]="listProduct">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th>imagen</th>
+      <th>Categoria</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-listProduct>
+    <tr>
+      <td>{{listProduct.name}}</td>
+      <td>{{listProduct.price}}</td>
+      <td>{{listProduct.img}}</td>
+      <td>{{listProduct.category}}</td>
+      <td>
+        <p-button icon="pi pi-sync" class="mx-1"></p-button>
+        <p-button icon="pi pi-eraser" class="mx-1"></p-button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

@@ -1,0 +1,38 @@
+main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas:
+  "header header header header header"
+  "aside section section section section"
+  "footer footer footer footer footer";
+  grid-template-rows: 20% 70% 10%;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  border: 1px solid green;
+  background-color: white;
+  padding: 20px;
+}
+
+section {
+  grid-area: section;
+  border: 1px solid green;
+  background-color: white;
+  padding: 20px;
+}
+
+aside {
+  grid-area: aside;
+  border: 1px solid green;
+  background-color: white;
+  padding: 20px;
+}
+
+footer {
+  grid-area: footer;
+  border: 1px solid green;
+  background-color: white;
+  padding: 20px;
+}
