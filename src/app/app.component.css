@@ -3,7 +3,7 @@ main {
   grid-template-columns: repeat(5, 1fr);
   grid-template-areas:
   "header header header header header"
-  "aside section section section section"
+  "section section section section section"
   "footer footer footer footer footer";
   grid-template-rows: 20% 70% 10%;
   height: 100vh;
@@ -23,12 +23,12 @@ section {
   padding: 20px;
 }
 
-aside {
+/* aside {
   grid-area: aside;
   border: 1px solid green;
   background-color: white;
   padding: 20px;
-}
+} */
 
 footer {
   grid-area: footer;

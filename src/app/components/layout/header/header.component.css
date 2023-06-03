@@ -1,17 +1,30 @@
+h1{
+  color: darkgoldenrod;
+}
+
 section{
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  place-items: center;
+  align-items: center;
+  background-color: #8dc3d8;
+}
+
+.logo{
+  flex-grow: 1;
 }
 
 .logo img{
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 152px;
+  padding: 1vh;
 }
 
-.title{
-  font-family: 'Righteous';
-  flex-grow: 0;
-  color: green;
+
+.tittle{
+  flex-grow: 1;
+}
+
+nav{
+  flex-grow: 3;
 }

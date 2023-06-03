@@ -3,49 +3,49 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AsideComponent } from './components/layout/aside/aside.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { SectionComponent } from './components/layout/section/section.component';
-import { Ejemplo1Component } from './components/ejemplos/ejemplo1/ejemplo1.component';
-import { SlideMenuModule } from 'primeng/slidemenu';
 import { MenubarModule } from 'primeng/menubar';
-import {TableModule} from 'primeng/table';
-import {ButtonModule} from 'primeng/button';
-import { FormsModule } from '@angular/forms';
-import { Ejemplo2Component } from './components/ejemplos/ejemplo2/ejemplo2.component';
-import { Ejemplo6Component } from './components/ejemplos/ejemplo6/ejemplo6.component';
-import { AgregarProductoComponent } from './components/ejemplos/agregar-producto/agregar-producto.component';
-import { InputTextModule } from 'primeng/inputtext';
-import { ToastModule} from 'primeng/toast';
+import { MostrarClienteComponent } from './components/cliente/mostrar-cliente/mostrar-cliente.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
+import { MessageService} from 'primeng/api';
+import { CrearClienteComponent } from './components/cliente/crear-cliente/crear-cliente.component';
+import { ActualizarClienteComponent } from './components/cliente/actualizar-cliente/actualizar-cliente.component';
+import { ToastModule} from 'primeng/toast';
+import { MostrarVentaComponent } from './components/venta/mostrar-venta/mostrar-venta.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AsideComponent,
     HeaderComponent,
     FooterComponent,
     SectionComponent,
-    Ejemplo1Component,
-    Ejemplo2Component,
-    Ejemplo6Component,
-    AgregarProductoComponent,
-
+    MostrarClienteComponent,
+    CrearClienteComponent,
+    ActualizarClienteComponent,
+    MostrarVentaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SlideMenuModule,
     MenubarModule,
+    HttpClientModule,
     TableModule,
-    ButtonModule,
-    FormsModule,
     InputTextModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonModule,
     ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

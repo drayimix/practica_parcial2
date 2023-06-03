@@ -4,11 +4,17 @@
 </div>
 <!-- <p>Informacion de ciudades famosas</p> -->
 <div class="title">
-  <h2>Practica</h2>
+  <!-- <h2>Practica</h2> -->
 </div>
 <nav>
-  <div class="card">
-    <p-menubar [model]="items"></p-menubar>
-  </div>
+
+<p-menubar [model]="items">
+  <ng-template pTemplate="start">
+      <img src="" height="40" class="mr-2" />
+  </ng-template>
+  <ng-template pTemplate="end">
+      <input type="text" pInputText placeholder="Search" class="w-full" />
+  </ng-template>
+</p-menubar>
 </nav>
 </section>

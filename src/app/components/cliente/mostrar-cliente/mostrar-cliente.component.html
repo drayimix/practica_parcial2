@@ -1,0 +1,44 @@
+<!-- <p>mostrar-cliente works!</p> -->
+<div class="flex align-items-center justify-content-end bg-cyan-100">
+  <a pButton pRipple label="Crear Cliente" icon="pi pi-user-plus" class="bg-cyan-600" [routerLink]="['/addCliente']">
+  </a>
+</div>
+<div>
+  <p-toast></p-toast>
+</div>
+
+<p-table [value]="clientes">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Direccion</th>
+      <th>Ciudad</th>
+      <th>Codigo</th>
+      <th>Acciones</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-clientes>
+    <tr>
+      <td>{{clientes.id}}</td>
+      <td>{{clientes.cedula}}</td>
+      <td>{{clientes.nombre}}</td>
+      <td>{{clientes.apellido}}</td>
+      <td>{{clientes.direccion}}</td>
+      <td>{{clientes.ciudad}}</td>
+      <td>{{clientes.codigoCliente}}</td>
+      <td>
+        <p-button icon="pi pi-plus" class="bg-cyan-600 mr-1" (click)="imprimir(clientes.id)"></p-button>
+
+        <a pButton pRipple icon="pi pi-sync" class="bg-cyan-600 mr-1" [routerLink]="['/clientes/edit/', clientes.id]">
+        </a>
+        <!-- <p-button icon="pi pi-sync" styleClass="p-button-success"></p-button> -->
+
+        <button type="button" pButton pRipple icon="pi pi-times" class="bg-cyan-600 mr-1" (click)="eliminar(clientes.id)">
+        </button>
+        <!-- <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button> -->
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

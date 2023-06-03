@@ -1,9 +1,10 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Ejemplo1Component } from './components/ejemplos/ejemplo1/ejemplo1.component';
-import { Ejemplo2Component } from './components/ejemplos/ejemplo2/ejemplo2.component';
-import { Ejemplo6Component } from './components/ejemplos/ejemplo6/ejemplo6.component';
-import { AgregarProductoComponent } from './components/ejemplos/agregar-producto/agregar-producto.component';
+import { MostrarClienteComponent } from './components/cliente/mostrar-cliente/mostrar-cliente.component';
+import { CrearClienteComponent } from './components/cliente/crear-cliente/crear-cliente.component';
+import { ActualizarClienteComponent } from './components/cliente/actualizar-cliente/actualizar-cliente.component';
+import { MostrarVentaComponent } from './components/venta/mostrar-venta/mostrar-venta.component';
+
 
 const routes: Routes = [
   {
@@ -12,21 +13,21 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'ejemplo1',
-    component: Ejemplo1Component
+    path:'clientes',
+    component: MostrarClienteComponent
   },
   {
-    path: 'ejemplo2',
-    component: Ejemplo2Component
+    path: 'addCliente',
+    component: CrearClienteComponent
   },
   {
-    path: 'ejemplo6',
-    component: Ejemplo6Component
+    path: 'clientes/edit/:id',
+    component: ActualizarClienteComponent
   },
   {
-    path: 'agregarProducto',
-    component: AgregarProductoComponent
-  }
+    path:'ventas',
+    component: MostrarVentaComponent
+  },
 ];
 
 @NgModule({

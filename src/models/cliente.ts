@@ -1,21 +1,10 @@
-export interface Cliente{
+export interface ClienteI{
+  id?: number;
+  cedula: string;
   name: string;
-  age: number;
-  telefono:number;
+  apellido: number;
   direccion: string;
+  ciudad: string;
+  codigoCliente:number;
 }
 
-
-export class Client{
-  name: string;
-  age: number;
-  telefono:number;
-  direccion: string;
-
-  constructor(name: string, age:number,telefono:number,direccion:string) {
-    this.name=name;
-    this.age=age;
-    this.telefono=telefono;
-    this.direccion=direccion;
-  }
-}
