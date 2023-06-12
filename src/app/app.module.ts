@@ -20,7 +20,9 @@ import { MessageService} from 'primeng/api';
 import { CrearClienteComponent } from './components/cliente/crear-cliente/crear-cliente.component';
 import { ActualizarClienteComponent } from './components/cliente/actualizar-cliente/actualizar-cliente.component';
 import { ToastModule} from 'primeng/toast';
-import { MostrarVentaComponent } from './components/venta/mostrar-venta/mostrar-venta.component';
+import { MostrarDocenteComponent } from './components/docente/mostrar-docente/mostrar-docente.component';
+import { CrearDocenteComponent } from './components/docente/crear-docente/crear-docente.component';
+import { ActualizarDocenteComponent } from './components/docente/actualizar-docente/actualizar-docente.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,9 @@ import { MostrarVentaComponent } from './components/venta/mostrar-venta/mostrar-
     MostrarClienteComponent,
     CrearClienteComponent,
     ActualizarClienteComponent,
-    MostrarVentaComponent,
+    MostrarDocenteComponent,
+    CrearDocenteComponent,
+    ActualizarDocenteComponent,
   ],
   imports: [
     BrowserModule,

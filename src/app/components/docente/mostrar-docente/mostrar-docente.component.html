@@ -1,0 +1,39 @@
+<!-- <p>mostrar-docente works!</p> -->
+<div class="flex align-items-center justify-content-end bg-cyan-100">
+  <a pButton pRipple label="Crear Docente" icon="pi pi-user-plus" class="bg-cyan-600" [routerLink]="['/addDocente']">
+  </a>
+</div>
+<div>
+  <p-toast></p-toast>
+</div>
+
+<p-table [value]="docentes">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Tipo Vinculacion</th>
+      <th>Programa</th>
+      <th>Facultad</th>
+      <th>Acciones</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-docentes>
+    <tr>
+      <td>{{docentes.id}}</td>
+      <td>{{docentes.nombreDocente}}</td>
+      <td>{{docentes.tipoVinculacion}}</td>
+      <td>{{docentes.programa}}</td>
+      <td>{{docentes.facultad}}</td>
+      <td>
+        <a pButton pRipple icon="pi pi-sync" class="bg-cyan-600 mr-1" [routerLink]="['/docentes/edit/', docentes.id]">
+        </a>
+        <!-- <p-button icon="pi pi-sync" styleClass="p-button-success"></p-button> -->
+
+        <button type="button" pButton pRipple icon="pi pi-times" class="bg-cyan-600 mr-1" (click)="eliminarDocente(docentes.id)">
+        </button>
+        <!-- <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button> -->
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

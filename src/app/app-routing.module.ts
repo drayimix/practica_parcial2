@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MostrarClienteComponent } from './components/cliente/mostrar-cliente/mostrar-cliente.component';
 import { CrearClienteComponent } from './components/cliente/crear-cliente/crear-cliente.component';
 import { ActualizarClienteComponent } from './components/cliente/actualizar-cliente/actualizar-cliente.component';
-import { MostrarVentaComponent } from './components/venta/mostrar-venta/mostrar-venta.component';
+import { MostrarDocenteComponent } from './components/docente/mostrar-docente/mostrar-docente.component';
+import { CrearDocenteComponent } from './components/docente/crear-docente/crear-docente.component';
+import { ActualizarDocenteComponent } from './components/docente/actualizar-docente/actualizar-docente.component';
 
 
 const routes: Routes = [
@@ -25,8 +27,16 @@ const routes: Routes = [
     component: ActualizarClienteComponent
   },
   {
-    path:'ventas',
-    component: MostrarVentaComponent
+    path:'docentes',
+    component: MostrarDocenteComponent
+  },
+  {
+    path:'addDocente',
+    component: CrearDocenteComponent
+  },
+  {
+    path:'docentes/edit/:id',
+    component: ActualizarDocenteComponent
   },
 ];
 
