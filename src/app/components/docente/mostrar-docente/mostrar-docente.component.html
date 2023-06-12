@@ -15,6 +15,7 @@
       <th>Tipo Vinculacion</th>
       <th>Programa</th>
       <th>Facultad</th>
+      <th>Asignatura</th>
       <th>Acciones</th>
     </tr>
   </ng-template>
@@ -25,6 +26,7 @@
       <td>{{docentes.tipoVinculacion}}</td>
       <td>{{docentes.programa}}</td>
       <td>{{docentes.facultad}}</td>
+      <td>{{docentes.asignatura.nameAsignatura}}</td>
       <td>
         <a pButton pRipple icon="pi pi-sync" class="bg-cyan-600 mr-1" [routerLink]="['/docentes/edit/', docentes.id]">
         </a>

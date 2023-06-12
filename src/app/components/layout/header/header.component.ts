@@ -11,20 +11,20 @@ export class HeaderComponent implements OnInit{
   ngOnInit(): void {
     this.items=[
       {
-        label:'cliente',
+        label:'Alumnos',
         icon: 'pi pi-user',
         routerLink: '/clientes'
       },
       {
-        label: 'Ventas',
+        label: 'Docentes',
         icon: 'pi pi-shopping-cart',
         routerLink: '/docentes'
       },
-      {
-        label: 'Coche',
-        icon: 'pi pi-car',
-        routerLink: ''
-      }
+      // {
+      //   label: 'Coche',
+      //   icon: 'pi pi-car',
+      //   routerLink: ''
+      // }
     ]
   }
 }
