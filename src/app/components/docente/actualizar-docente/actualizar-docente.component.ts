@@ -18,6 +18,7 @@ export class ActualizarDocenteComponent implements OnInit{
     tipoVinculacion: ['', [Validators.required]],
     programa: ['', [Validators.required]],
     facultad: ['', [Validators.required]],
+    asignaturaId: ['', [Validators.required]],
   });
   constructor(
     private formBuilder: FormBuilder,
@@ -58,4 +59,5 @@ export class ActualizarDocenteComponent implements OnInit{
   get tipoVinculacion() { return this.form.get('tipoVinculacion'); }
   get programa() { return this.form.get('programa'); }
   get facultad() { return this.form.get('facultad'); }
+  get asignaturaId() { return this.form.get('asignaturaId'); }
 }

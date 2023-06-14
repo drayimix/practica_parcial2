@@ -4,4 +4,5 @@ export interface DocenteI {
   tipoVinculacion: string;
   programa: string;
   facultad: string;
+  asignaturaId: number;
 }
