@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DocenteI } from 'src/models/docente';
 import { DocenteService } from 'src/app/services/docente.service';
+import { AsignaturaI } from 'src/models/asignatura';
 
 @Component({
   selector: 'app-crear-docente',
@@ -11,6 +12,7 @@ import { DocenteService } from 'src/app/services/docente.service';
   styleUrls: ['./crear-docente.component.css']
 })
 export class CrearDocenteComponent implements OnInit{
+  asignaturas: AsignaturaI[]=[];
   public form:FormGroup = this.formBuilder.group({
     nombreDocente: ['', [Validators.required]],
     tipoVinculacion: ['', [Validators.required]],
@@ -28,7 +30,7 @@ export class CrearDocenteComponent implements OnInit{
 
   }
   ngOnInit(): void {
-
+    this.getAsignatura();
   }
 
   onSubmit(){
@@ -45,6 +47,13 @@ export class CrearDocenteComponent implements OnInit{
       console.log('No se ha creado correctamente');
     }
     )
+  }
+
+  getAsignatura(){
+    this.docenteService.getAllAsignatura().subscribe({next: (data)=>{
+      this.asignaturas = data.asignatura
+      console.log(this.asignaturas)
+    }})
   }
 
   cancel(){

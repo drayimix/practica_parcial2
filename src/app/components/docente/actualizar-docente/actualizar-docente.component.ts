@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DocenteI } from 'src/models/docente';
 import { DocenteService } from 'src/app/services/docente.service';
+import { AsignaturaI } from 'src/models/asignatura';
 
 @Component({
   selector: 'app-actualizar-docente',
@@ -12,6 +13,7 @@ import { DocenteService } from 'src/app/services/docente.service';
 })
 export class ActualizarDocenteComponent implements OnInit{
   id: number = 0;
+  asignaturas: AsignaturaI[]=[];
   public form:FormGroup = this.formBuilder.group({
     id: [''],
     nombreDocente: ['', [Validators.required]],
@@ -32,11 +34,19 @@ export class ActualizarDocenteComponent implements OnInit{
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.getDocente(this.id);
+    this.getAsignatura();
   }
 
   getDocente(id: number){
     this.docenteService.getOneDocente(id).subscribe({next: (data)=>{
       this.form.setValue(data.docente)
+    }})
+  }
+
+  getAsignatura(){
+    this.docenteService.getAllAsignatura().subscribe({next: (data)=>{
+      this.asignaturas = data.asignatura
+      console.log(this.asignaturas)
     }})
   }
 

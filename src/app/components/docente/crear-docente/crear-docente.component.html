@@ -37,12 +37,23 @@
     </div>
   </div>
 
-  <div class="grig">
+  <!-- <div class="grig">
     <div class="col-12 sm:col-6">
       <div class="p-inputgroup mb-1">
         <span class="p-inputgroup-addon"><i class="pi pi-bookmark"></i></span>
         <input type="text" pInputText formControlName="asignaturaId" placeholder="asignaturaId" title="asignaturaId">
       </div>
+    </div>
+  </div> -->
+
+  <div>
+    <label for="asignaturaId">Asignatura:</label>
+    <select id="asignaturaId" formControlName="asignaturaId">
+      <option value="">Seleccione una Asignatura</option>
+      <option *ngFor="let asignatura of asignaturas" [value]="asignatura.id">{{ asignatura.nameAsignatura }}</option>
+    </select>
+    <div *ngIf="form.controls['asignaturaId'].invalid && form.controls['asignaturaId'].touched">
+      Debe seleccionar una Asignatura.
     </div>
   </div>
 
